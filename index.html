@@ -1108,7 +1108,8 @@
         <p class="plan-note">
           Pay once for 5 working days. Ideal to test your daily EviGo route without committing for a month.
         </p>
-        <button class="booking-btn" type="button">
+        <!-- WEEKLY PLAN BUTTON (UNCHANGED LABEL, ADDED ID FOR JS) -->
+        <button class="booking-btn" type="button" id="weeklyPlanBtn">
           I want this weekly plan
         </button>
         <p class="rate-note">
@@ -1121,7 +1122,8 @@
         <p class="plan-note">
           Best value for regular riders. Lock your seat on an EviGo van for the full month.
         </p>
-        <button class="booking-btn" type="button">
+        <!-- MONTHLY PLAN BUTTON (UNCHANGED LABEL, ADDED ID FOR JS) -->
+        <button class="booking-btn" type="button" id="monthlyPlanBtn">
           I want this monthly plan
         </button>
         <p class="rate-note" id="subRateNote"></p>
@@ -1254,6 +1256,23 @@ eco-friendly electric mobility.
   const referralOnLoadApply    = document.getElementById('referralOnLoadApply');
   const referralOnLoadSkip     = document.getElementById('referralOnLoadSkip');
   const referralOnLoadMsg      = document.getElementById('referralOnLoadMsg');
+
+  /* NEW: Weekly / Monthly plan buttons */
+  const weeklyPlanBtn   = document.getElementById('weeklyPlanBtn');
+  const monthlyPlanBtn  = document.getElementById('monthlyPlanBtn');
+  const PLAN_FORM_URL   = "https://forms.gle/FRf8syjG9fGYhdPZ6";
+
+  if (weeklyPlanBtn) {
+    weeklyPlanBtn.addEventListener('click', function () {
+      window.open(PLAN_FORM_URL, '_blank');
+    });
+  }
+  if (monthlyPlanBtn) {
+    monthlyPlanBtn.addEventListener('click', function () {
+      window.open(PLAN_FORM_URL, '_blank');
+    });
+  }
+  /* END NEW */
 
   function showRefToast(msg) {
     if (!refToast) return;
